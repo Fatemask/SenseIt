@@ -10,7 +10,6 @@ from django.template import loader
 from django.urls import reverse
 
 
-#@login_required(login_url="/login/")
 def index(request):
     context = {'segment': 'index'}
 
@@ -29,7 +28,12 @@ def assessment(request):
     html_template = loader.get_template('home/assessment.html')
     return HttpResponse(html_template.render(context, request))
 
-#@login_required(login_url="/login/")
+def help(request):
+    context = {'segment': 'help'}
+
+    html_template = loader.get_template('home/help.html')
+    return HttpResponse(html_template.render(context,request))
+
 def pages(request):
     context = {}
     # All resource paths end in .html.
