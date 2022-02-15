@@ -10,13 +10,23 @@ from django.template import loader
 from django.urls import reverse
 
 
-# @login_required(login_url="/login/")
 def index(request):
     context = {'segment': 'index'}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
+def about_depression(request):
+    context = {'segment': 'index'}
+
+    html_template = loader.get_template('home/about-depression.html')
+    return HttpResponse(html_template.render(context, request))
+
+def assessment(request):
+    context = {'segment': 'index'}
+
+    html_template = loader.get_template('home/assessment.html')
+    return HttpResponse(html_template.render(context, request))
 
 def help(request):
     context = {'segment': 'help'}
@@ -24,8 +34,6 @@ def help(request):
     html_template = loader.get_template('home/help.html')
     return HttpResponse(html_template.render(context,request))
 
-
-# @login_required(login_url="/login/")
 def pages(request):
     context = {}
     # All resource paths end in .html.
