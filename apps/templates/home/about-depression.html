@@ -1,0 +1,562 @@
+{% extends "layouts/base.html" %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  {% include 'includes/navigation-transparent.html' %}
+
+  <header class="bg-gradient-dark">
+    <div class="page-header min-vh-75" style="background-image: url('https://images.unsplash.com/photo-1606277462860-86b28f9ed789?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');">
+      <span class="mask bg-gradient-dark opacity-6"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mx-auto my-auto">
+            <h2 class="text-white"> There is no health without mental health. </h2>
+            <p class="lead mb-4 text-white opacity-8"> Depression isn't a choice, but stigma and ignorance are. </p>           
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <!-- Section with four info areas left & one card right with image and waves -->
+    <section class="py-7">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">     
+            <span class="badge bg-gradient-primary">Types of Depression</span>         
+            <div class="row justify-content-start mt-4">
+              <div class="col-md-6">
+                <div class="info">
+                  <i class="material-icons text-3xl text-gradient text-info mb-3">psychology</i>
+                  <h5>Seasonal Affective Disorder (SAD)</h5>
+                  <p>Depression that occurs at a particular time of year, or during a particular season.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info">
+                  <i class="material-icons text-3xl text-gradient text-info mb-3">psychology</i>
+                  <h5>Dysthymia</h5>
+                  <p>Continuous mild depression that lasts for two years or more. Also called persistent depressive disorder or chronic depression.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-start mt-4">
+              <div class="col-md-6">
+                <div class="info">
+                  <i class="material-icons text-3xl text-gradient text-info mb-3">psychology</i>
+                  <h5>Prenatal Depression</h5>
+                  <p>Depression that occurs during pregnancy. This is sometimes also called antenatal depression.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info">
+                  <i class="material-icons text-3xl text-gradient text-info mb-3">psychology</i>
+                  <h5>Postnatal Depression (PND)</h5>
+                  <p>Depression that occurs in the first year after giving birth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
+            <div class="card">
+              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <a class="d-block blur-shadow-image">
+                  <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="img-colored-shadow" class="img-fluid border-radius-lg">
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="font-weight-normal">
+                  <a href="javascript:;"> Your mental health is a priority! </a>
+                </h5>
+                <p class="mb-0">
+                  Your illness does not define you. Your strength and courage does.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-5 bg-gradient-dark position-relative overflow-hidden">
+        <img src="https://appsrv1-147a1.kxcdn.com/material-kit-pro-v300/img/shapes/pattern-lines.svg" alt="pattern-lines" class="position-absolute start-0 top-0 w-100 h-100 opacity-6">
+        <div class="container py-5 postion-relative z-index-2">
+          <div class="col-lg-6 col-md-8 mx-auto text-center mb-5">
+            <h3 class="text-white">Common signs and symptoms of depression</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 col-md-6 ms-lg-auto mb-sm-0 mb-5">
+              <div class="card text-center">
+                <div class="card-header bg-transparent">
+                  <h5 class="mt-4 mb-0">How you might feel</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled max-width-400 mx-auto">
+                    <li>
+                       Down, upset or tearful
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Restless, agitated or irritable
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Guilty, worthless and down on yourself
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Empty and numb
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Isolated and unable to relate to other people
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Finding no pleasure in life 
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        No self-confidence or self-esteem
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Hopeless and despairing
+                    </li>
+                    <hr class="horizontal dark">
+                    <li>
+                        Suicidal
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6 me-lg-auto">
+              <div class="card text-center">
+                <div class="card-header bg-transparent">
+                  <h5 class="mt-4 mb-0">How you might behave</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled max-width-400 mx-auto">
+                    <li>
+                        Avoiding social events and activities you usually enjoy
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Self-harming or suicidal behaviour
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Difficulty remembering or concentrating on things
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Difficulty sleeping, or sleeping too much
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Feeling tired all the time
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        No appetite and losing weight, or eating too much and gaining weight
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Physical aches and pains with no obvious physical cause
+                     </li>
+                     <hr class="horizontal dark">
+                     <li>
+                        Using more tobacco, alcohol or other drugs than usual
+                     </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h3 class="mt-4">What causes depression?</h3>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-4 mb-lg-0 mb-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Childhood experiences</h4>
+                    <p class="text-white"> There is good evidence to show that going through difficult experiences in your childhood can make you vulnerable to experiencing depression later in life. This could be: physical, sexual or emotional abuse, the loss of someone close to you, traumatic events, neglect, an unstable family situation. </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 mb-lg-0 mb-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Life events</h4>
+                    <p class="text-white"> In many cases, you might find your depression has been triggered by an unwelcome, stressful or traumatic event. This could be: losing your job or unemployment, the end of a relationship, bereavement, being bullied or abused, including experiencing racism. </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.unsplash.com/photo-1633104326066-504911cc1347?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Other mental health problems</h4>
+                    <p class="text-white">If you experience another mental health problem, it's common to also experience depression. This might be because coping with the symptoms of your mental health problem can trigger depression. You may find you experience depression if you also experience: anxiety, eating problems, PTSD.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-4 mb-lg-0 mb-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Physical health problems</h4>
+                    <p class="text-white">There are some physical health problems that can cause depression:
+                        conditions affecting the brain and nervous system,
+                        hormonal problems, especially thyroid and parathyroid problems, 
+                        symptoms relating to the menstrual cycle or the menopause,
+                        low blood sugar nand 
+                        sleep problems.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 mb-lg-0 mb-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.unsplash.com/photo-1620065692611-92d81d646631?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Medication, recreational drugs and alcohol</h4>
+                    <p class="text-white">Depression can be a side effect of a lot of different medicines. Alcohol and recreational drugs can both cause depression. Although you might initially use them to make yourself feel better, or to distract yourself, they can make you feel worse overall. </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4">
+              <a href="javascript:;">
+                <div class="card card-background">
+                  <div class="full-background" style="background-image: url('https://images.pexels.com/photos/6943448/pexels-photo-6943448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')"></div>
+                  <div class="card-body pt-12">
+                    <h4 class="text-white">Sleep, diet and exercise</h4>
+                    <p class="text-white"> A poor diet and lack of sleep and exercise can affect your mood, and make it harder for you to cope with difficult things going on in your life. Although these cannot directly cause depression, they can make you more vulnerable to developing it. </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-4 pb-5">
+        <div class="container">
+          <div class="row my-5">
+            <div class="col-md-8 mx-auto text-center">
+              <h2>Self-care</h2>
+              <p> Experiencing depression can be very difficult, but there are steps you can take that might help. </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 mx-auto">
+              <div class="accordion" id="accordionRental">
+                <div class="accordion-item mb-3">
+                  <h5 class="accordion-header" id="headingOne">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Talk to someone you trust
+                      <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                      <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                    </button>
+                  </h5>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRental">
+                    <div class="accordion-body text-sm opacity-8">
+                        It might feel hard to start talking about how you are feeling, but many people find that just sharing their experiences can help them feel better. It may be that just having someone listen to you and show they care can help in itself.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-3">
+                  <h5 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Look after your physical health
+                      <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                      <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                    </button>
+                  </h5>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRental">
+                    <div class="accordion-body text-sm opacity-8">
+                        Experiencing depression can make it hard to find the energy to look after yourself. But taking steps to look after your physical health can make a difference to how you feel:
+                      <br>
+                      <ul>
+                          <li> <strong> Good sleep :</strong> For lots of people who experience depression, sleeping too little or too much can be a daily problem. Getting good sleep can help to improve your mood and increase your energy levels. </li>
+                          <li> <strong> Diet :</strong> Eating regularly and keeping your blood sugar stable can make a difference to your mood and energy levels. </li>
+                          <li> <strong> Physical activity :</strong> Many people find exercise a challenge but activities like yoga, swimming or walking can be a big boost to your mood. </li>
+                          <li> <strong> Hygiene : </strong> When you're experiencing depression, it's easy for hygiene to not feel like a priority. But small things, like taking a shower and getting fully dressed whether or not you're going out of the house, can make a big difference to how you feel. </li>
+                          <li> <strong> Avoid recreational drugs and alcohol : </strong> While you might want to use recreational drugs or alcohol to cope with difficult feelings about yourself, in the long run they can make you feel worse and can prevent you from dealing with underlying problems. </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-3">
+                  <h5 class="accordion-header" id="headingThree">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Spend time in nature
+                      <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                      <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                    </button>
+                  </h5>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRental">
+                    <div class="accordion-body text-sm opacity-8">
+                        Spending time in nature has been found to help with mental health problems like depression. For example, research into ecotherapy, a type of formal treatment which involves doing activities outside in nature, has shown it can help with mild to moderate depression. This might be due to combining regular physical activity and social contact with being outside in nature. 
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-3">
+                  <h5 class="accordion-header" id="headingFour">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Practise self-care
+                      <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                      <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                    </button>
+                  </h5>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionRental">
+                    <div class="accordion-body text-sm opacity-8">
+                        Taking time to look after yourself, such as doing something you enjoy, can help to support your recovery and improve your quality of life.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-3">
+                  <h5 class="accordion-header" id="headingFifth">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+                      Keep a mood diary
+                      <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                      <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                    </button>
+                  </h5>
+                  <div id="collapseFifth" class="accordion-collapse collapse" aria-labelledby="headingFifth" data-bs-parent="#accordionRental">
+                    <div class="accordion-body text-sm opacity-8">
+                        Keeping a mood diary can help you keep track of any changes in your mood, and you might find that you have more good days than you think. It can also help you notice if any activities, places or people make you feel better or worse.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- END Section with four info areas left & one card right with image and waves -->
+    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
+    <section class="pb-5 position-relative bg-gradient-dark border-radius-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 text-start mb-5 mt-5">
+            <h3 class="text-white z-index-1 position-relative">How can friends and family help?</h3>
+            <p class="text-white opacity-8 mb-0">The support of friends and family can play a very important role in someone recovering from depression.</p>
+          </div>
+        </div>
+
+        <div class="row mt-lg-5 mt-4">
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4">
+                  <h5 class="mt-2">Support them to get help</h5>
+                  <p class="mb-3"> You can't force anyone to get help if they don't want it, so it's important to reassure your loved one that it's ok to ask for help, and that there is help out there. </p>                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card mb-3">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-success shadow-success shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4">
+                  <h5 class="mt-2">Be open about depression</h5>
+                  <p class="mb-3"> Lots of people can find it hard to open up and speak about how they're feeling. Try to be open about depression, so your friend or family member can share their experiences. </p>             
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card mb-3">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-warning shadow-warning shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4 px-sm-5 ">
+                  <h5 class="mt-2">Keep in touch</h5>
+                  <p class="mb-3">It might be hard for your loved one to have the energy to keep up contact. Let them know that you're thinking of them can make a big difference to how someone feels.</p>                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card mb-3">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-secondary shadow-dark shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4">
+                  <h5 class="mt-2">Don't be critical</h5>
+                  <p class="mb-3">Try not to blame them or put too much pressure on them to get better straight away – your loved one is probably being very critical and harsh towards themselves already. </p>                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card mb-3">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-info shadow-info shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4">
+                  <h5 class="mt-2">Keep a balance</h5>
+                  <p class="mb-3">While it might be useful to offer to help them do things, like keep on top of the housework or cook healthy meals, it's also important to encourage them to do things for themselves. </p>                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 mb-5">
+              <div class="card mb-3">
+                <div class="ps-4 mt-n4">
+                  <div class="icon icon-lg icon-shape bg-gradient-danger shadow-danger shadow text-center border-radius-xl">
+                    <i class="material-icons opacity-10">thumb_up</i>
+                  </div>
+                </div>
+                <div class="card-body border-radius-lg position-relative overflow-hidden pb-4">
+                  <h5 class="mt-2">Take care of yourself</h5>
+                  <p class="mb-3">Your mental health is important too, and looking after someone else could put a strain on your wellbeing. So take care of your physical and mental health.</p>
+                </div>
+              </div>
+            </div>
+      
+          </div>       
+      </div>
+    </section>
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    // get the element to animate
+    var element = document.getElementById('count-stats');
+    var elementHeight = element.clientHeight;
+
+    // listen for scroll event and call animate function
+
+    document.addEventListener('scroll', animate);
+
+    // check if element is in view
+    function inView() {
+      // get window height
+      var windowHeight = window.innerHeight;
+      // get number of pixels that the document is scrolled
+      var scrollY = window.scrollY || window.pageYOffset;
+      // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+      var scrollPosition = scrollY + windowHeight;
+      // get element position (distance from the top of the page to the bottom of the element)
+      var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+      // is scroll position greater than element position? (is element in view?)
+      if (scrollPosition > elementPosition) {
+        return true;
+      }
+
+      return false;
+    }
+
+    var animateComplete = true;
+    // animate element when it is in view
+    function animate() {
+
+      // is element in view?
+      if (inView()) {
+        if (animateComplete) {
+          if (document.getElementById('state1')) {
+            const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+            if (!countUp.error) {
+              countUp.start();
+            } else {
+              console.error(countUp.error);
+            }
+          }
+          if (document.getElementById('state2')) {
+            const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+            if (!countUp1.error) {
+              countUp1.start();
+            } else {
+              console.error(countUp1.error);
+            }
+          }
+          if (document.getElementById('state3')) {
+            const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+            if (!countUp2.error) {
+              countUp2.start();
+            } else {
+              console.error(countUp2.error);
+            };
+          }
+          animateComplete = false;
+        }
+      }
+    }
+
+    if (document.getElementById('typed')) {
+      var typed = new Typed("#typed", {
+        stringsElement: '#typed-strings',
+        typeSpeed: 90,
+        backSpeed: 90,
+        backDelay: 200,
+        startDelay: 500,
+        loop: true
+      });
+    }
+  </script>
+
+  <script>
+    if (document.getElementsByClassName('page-header')) {
+      window.onscroll = debounce(function() {
+        var scrollPosition = window.pageYOffset;
+        var bgParallax = document.querySelector('.page-header');
+        var oVal = (window.scrollY / 3);
+        bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+      }, 6);
+    }
+  </script>
+
+{% endblock javascripts %}

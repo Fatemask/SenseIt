@@ -1,0 +1,253 @@
+{% extends "layouts/base.html" %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  {% include 'includes/navigation-transparent.html' %}
+
+  <!-- -------- START HEADER 8 w/ two background colors ------- -->
+<header class="header-rounded-images">
+    <div class="page-header min-vh-90">
+      <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" src="https://images.unsplash.com/photo-1620389701597-28188918b071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="image" loading="lazy">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 d-flex">
+            <div class="card card-body blur text-md-start text-center px-sm-5 shadow-lg mt-sm-5 py-sm-5">
+              <h2 class="text-dark mb-4">Depression Test</h2>
+              <p class="lead text-dark pe-md-5 me-md-5">
+                Online screening is one of the quickest and easiest ways to determine whether you or your loved ones are experiencing symptoms of depression.
+              </p>
+              <div class="buttons">
+                <button type="button" class="btn bg-gradient-primary mt-4"> Take the test </button>
+                <button type="button" class="btn btn-outline-secondary mt-4 ms-2">Read About Depression</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- -------- END HEADER 9 w/ two background colors ------- -->
+
+  <section class="py-7">
+    <div class="container">
+      <div class="row justify-space-between py-2">
+        <div class="col-lg-3 pb-5">
+          <div class="nav-wrapper position-relative">
+            <ul class="nav nav-pills nav-fill flex-column p-1 me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <li class="nav-item">
+                <a class="nav-link active" id="v-pills-message-tab" data-bs-toggle="pill" href="#v-pills-message" role="tab" aria-controls="v-pills-home" aria-selected="true"> Concerned Message </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="v-pills-questionnaire-tab" data-bs-toggle="pill" href="#v-pills-questionnaire" role="tab" aria-controls="v-pills-profile" aria-selected="false"> Questionnaire </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9 me-auto my-auto ms-auto">
+            <div class="card shadow-lg mb-5">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-message" role="tabpanel" aria-labelledby="v-pills-message-tab">
+                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                            <div class="bg-gradient-primary shadow-primary border-radius-lg p-3">
+                                <h3 class="text-white mb-0"> Analyze a concerned message </h3>
+                            </div>
+                        </div>
+                        <div class="card-body p-5">
+                            <form role="form" id="message-form" method="post" autocomplete="off">
+                                <div class="input-group input-group-outline mb-4">
+                                    <textarea name="message" class="form-control" id="message" rows="4" placeholder="Enter the message" spellcheck="false"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn bg-gradient-dark">Analyze</button>
+                                    </div>
+                                </div>
+                                <div class="row justify-space-between">
+                                    <div class="col-lg-4 mx-auto">
+                                        <div class="input-group input-group-outline">
+                                            <input type="text" class="form-control text-center my-2" placeholder="Result" disabled hidden>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-questionnaire" role="tabpanel" aria-labelledby="v-pills-questionnaire-tab">
+                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                            <div class="bg-gradient-primary shadow-primary border-radius-lg p-3">
+                                <h3 class="text-white mb-0">Attempt a Questionnaire</h3>
+                            </div>
+                        </div>
+                        <div class="card-body p-5">
+                            <section class="py-4 position-relative">
+                                <div id="carousel-testimonial-pricing" class="carousel slide carousel-team" data-bs-interval="false">
+                                  <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                      <div class="container">
+                                        <div class="row text-center">
+                                            <div class="col-6 mx-auto">
+                                            <p class="text-sm font-weight-bold mb-1"> Category </p>
+                                            <h4 class="text-dark">Question Excelent payment service.</h4>
+                                            <p class="my-4">
+                                              <i>"options - radio Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone.
+                                              This is the way to success."</i>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                      <div class="container">
+                                        <div class="row text-center">
+                                          <div class="col-6 mx-auto">
+                                            <p class="text-sm font-weight-bold mb-1">- Customer Story</p>
+                                            <h3 class="text-dark">Awesome services! Fast and secure.</h3>
+                                            <p class="my-4">
+                                              <i>"Wealth creation is an evolutionarily recent positive-sum game.
+                                                Status is an old zero-sum game. Those attacking wealth creation
+                                                are often just seeking status."</i>
+                                            </p>
+                                            <div class="author align-items-center">
+                                              <div class="avatar rounded-circle shadow bg-gradient-dark">
+                                                <img src="https://appsrv1-147a1.kxcdn.com/material-kit-pro-v300/img//logos/white-logos/logo-google-white.svg" alt="logo">
+                                              </div>
+                                              <div class="name ps-2">
+                                                <span>Ivana Goerge</span>
+                                                <div>
+                                                  <small>CFO - Google</small>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="w-25 ms-auto opacity-2 mt-n8">
+                                              <svg width="110px" height="110px" viewBox="0 0 270 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                  <title>quote-down</title>
+                                                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                      <path d="M107.000381,49.033238 C111.792099,48.01429 115.761022,48.6892564 116.625294,50.9407629 C117.72393,53.8028077 113.174473,58.3219079 107.017635,60.982801 C107.011653,60.9853863 107.00567,60.9879683 106.999688,60.990547 C106.939902,61.0219589 106.879913,61.0439426 106.820031,61.0659514 C106.355389,61.2618887 105.888177,61.4371549 105.421944,61.5929594 C88.3985192,68.1467602 80.3242628,76.9161885 70.3525495,90.6906738 C60.0774843,104.884196 54.9399518,119.643717 54.9399518,134.969238 C54.9399518,138.278158 55.4624127,140.716309 56.5073346,142.283691 C57.2039492,143.328613 57.9876406,143.851074 58.8584088,143.851074 C59.7291771,143.851074 61.0353294,143.241536 62.7768659,142.022461 C68.3497825,138.016927 75.4030052,136.01416 83.9365338,136.01416 C93.8632916,136.01416 102.658051,140.063232 110.320811,148.161377 C117.983572,156.259521 121.814952,165.88151 121.814952,177.027344 C121.814952,188.695638 117.417572,198.970703 108.622813,207.852539 C99.828054,216.734375 89.1611432,221.175293 76.6220807,221.175293 C61.9931745,221.175293 49.3670351,215.166992 38.7436627,203.150391 C28.1202903,191.133789 22.8086041,175.024577 22.8086041,154.822754 C22.8086041,131.312012 30.0359804,110.239421 44.490733,91.6049805 C58.2196377,73.906272 74.3541002,59.8074126 102.443135,50.4450748 C102.615406,50.3748509 102.790055,50.3058192 102.966282,50.2381719 C104.199241,49.7648833 105.420135,49.3936487 106.596148,49.1227802 L107,49 Z M233.000381,49.033238 C237.792099,48.01429 241.761022,48.6892564 242.625294,50.9407629 C243.72393,53.8028077 239.174473,58.3219079 233.017635,60.982801 C233.011653,60.9853863 233.00567,60.9879683 232.999688,60.990547 C232.939902,61.0219589 232.879913,61.0439426 232.820031,61.0659514 C232.355389,61.2618887 231.888177,61.4371549 231.421944,61.5929594 C214.398519,68.1467602 206.324263,76.9161885 196.352549,90.6906738 C186.077484,104.884196 180.939952,119.643717 180.939952,134.969238 C180.939952,138.278158 181.462413,140.716309 182.507335,142.283691 C183.203949,143.328613 183.987641,143.851074 184.858409,143.851074 C185.729177,143.851074 187.035329,143.241536 188.776866,142.022461 C194.349783,138.016927 201.403005,136.01416 209.936534,136.01416 C219.863292,136.01416 228.658051,140.063232 236.320811,148.161377 C243.983572,156.259521 247.814952,165.88151 247.814952,177.027344 C247.814952,188.695638 243.417572,198.970703 234.622813,207.852539 C225.828054,216.734375 215.161143,221.175293 202.622081,221.175293 C187.993174,221.175293 175.367035,215.166992 164.743663,203.150391 C154.12029,191.133789 148.808604,175.024577 148.808604,154.822754 C148.808604,131.312012 156.03598,110.239421 170.490733,91.6049805 C184.219638,73.906272 200.3541,59.8074126 228.443135,50.4450748 C228.615406,50.3748509 228.790055,50.3058192 228.966282,50.2381719 C230.199241,49.7648833 231.420135,49.3936487 232.596148,49.1227802 L233,49 Z" fill="#48484A" fill-rule="nonzero" transform="translate(135.311778, 134.872794) scale(-1, -1) translate(-135.311778, -134.872794) "></path>
+                                                  </g>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <a class="carousel-control-prev text-dark text-lg" href="#carousel-testimonial-pricing" role="button" data-bs-slide="prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next text-dark text-lg" href="#carousel-testimonial-pricing" role="button" data-bs-slide="next">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </div>
+                              </section>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+   
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    // get the element to animate
+    var element = document.getElementById('count-stats');
+    var elementHeight = element.clientHeight;
+
+    // listen for scroll event and call animate function
+
+    document.addEventListener('scroll', animate);
+
+    // check if element is in view
+    function inView() {
+      // get window height
+      var windowHeight = window.innerHeight;
+      // get number of pixels that the document is scrolled
+      var scrollY = window.scrollY || window.pageYOffset;
+      // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+      var scrollPosition = scrollY + windowHeight;
+      // get element position (distance from the top of the page to the bottom of the element)
+      var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+      // is scroll position greater than element position? (is element in view?)
+      if (scrollPosition > elementPosition) {
+        return true;
+      }
+
+      return false;
+    }
+
+    var animateComplete = true;
+    // animate element when it is in view
+    function animate() {
+
+      // is element in view?
+      if (inView()) {
+        if (animateComplete) {
+          if (document.getElementById('state1')) {
+            const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+            if (!countUp.error) {
+              countUp.start();
+            } else {
+              console.error(countUp.error);
+            }
+          }
+          if (document.getElementById('state2')) {
+            const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+            if (!countUp1.error) {
+              countUp1.start();
+            } else {
+              console.error(countUp1.error);
+            }
+          }
+          if (document.getElementById('state3')) {
+            const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+            if (!countUp2.error) {
+              countUp2.start();
+            } else {
+              console.error(countUp2.error);
+            };
+          }
+          animateComplete = false;
+        }
+      }
+    }
+
+    if (document.getElementById('typed')) {
+      var typed = new Typed("#typed", {
+        stringsElement: '#typed-strings',
+        typeSpeed: 90,
+        backSpeed: 90,
+        backDelay: 200,
+        startDelay: 500,
+        loop: true
+      });
+    }
+  </script>
+
+  <!--script>
+    if (document.getElementsByClassName('page-header')) {
+      window.onscroll = debounce(function() {
+        var scrollPosition = window.pageYOffset;
+        var bgParallax = document.querySelector('.page-header');
+        var oVal = (window.scrollY / 3);
+        bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+      }, 6);
+    }
+  </!--script>
+
+{% endblock javascripts %}
