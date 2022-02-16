@@ -10,7 +10,7 @@
 {% block content %}
 
   {% include 'includes/navigation-transparent.html' %}
-
+<div onload="getLocation();">
   <header class="header-2">
     <div class="page-header min-vh-75 relative" style="background-image: url('/static/assets/img/bg11.jpg')">
       <span class="mask opacity-4"></span>
@@ -421,6 +421,11 @@
       <div class="col-md-8 text-start mb-5 mt-5">
         <h3 class="text-white z-index-1 position-relative">Sense It</h3>
         <p class="text-white opacity-8 mb-0">A Platform for you to learn about your Mental health</p>
+        <!-- maps -->
+        <div id="mapholder"></div>
+        <form >
+          <input type="button" onclick="getLocation();" value="Get Location"/>
+       </form>
       </div>
     </div>
     <div class="row">
@@ -583,6 +588,7 @@
 <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
 </section>
+</div>
 
 {% endblock content %}
 
@@ -674,6 +680,35 @@ if (document.getElementsByClassName('page-header')) {
     bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
   }, 6);
 }
+</script>
+
+<script type="text/javascript">
+  function showLocation(position) {
+     var latitude = position.coords.latitude;
+     var longitude = position.coords.longitude;
+     var latlongvalue = position.coords.latitude + ","
+     + position.coords.longitude;
+     var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlongvalue+"&zoom=14&size=400x300&key=AIzaSyAa8HeLH2lQMbPeOiMlM9D1VxZ7pbGQq8o";
+     document.getElementById("mapholder").innerHTML =
+     "<img src='"+img_url+"'>";
+  }
+  function errorHandler(err) {
+     if(err.code == 1) {
+        alert("Error: Access is denied!");
+     } else if( err.code == 2) {
+        alert("Error: Position is unavailable!");
+     }
+  }
+  function getLocation(){
+     if(navigator.geolocation){
+        // timeout at 60000 milliseconds (60 seconds)
+        var options = {timeout:60000};
+        navigator.geolocation.getCurrentPosition
+        (showLocation, errorHandler, options);
+     } else{
+        alert("Sorry, browser does not support geolocation!");
+     }
+  }
 </script>
 
 {% endblock javascripts %}
