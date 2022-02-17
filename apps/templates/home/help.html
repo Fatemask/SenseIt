@@ -419,16 +419,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 text-start mb-5 mt-5">
-        <h3 class="text-white z-index-1 position-relative">Sense It</h3>
-        <p class="text-white opacity-8 mb-0">A Platform for you to learn about your Mental health</p>
+        <!-- <h3 class="text-white z-index-1 position-relative">Sense It</h3>
+        <p class="text-white opacity-8 mb-0">A Platform for you to learn about your Mental health</p> -->
         <!-- maps -->
         <div id="mapholder"></div>
-        <form >
+        <!-- <form >
           <input type="button" onclick="getLocation();" value="Get Location"/>
-       </form>
+       </form> -->
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-6 col-12">
         <div class="card card-profile mt-4">
           <div class="row">
@@ -469,8 +469,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mt-4">
+    </div> -->
+    <!-- <div class="row mt-4">
       <div class="col-lg-6 col-12">
         <div class="card card-profile mt-4 z-index-2">
           <div class="row">
@@ -512,7 +512,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 <!-- </section> -->
 <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
 <section class="pt-4 pb-6 " id="count-stats">
@@ -579,7 +579,7 @@
       </div>
       <div class="col-md-5 ms-auto">
         <div class="position-relative">
-          <img class="max-width-50 w-100 position-relative z-index-2" src="/static/assets/img/macbook.png" alt="image">
+          <img class="max-width-50 w-100 position-relative z-index-2" src="/static/assets/img/h4.jpeg" alt="image">
         </div>
       </div>
     </div>
@@ -669,6 +669,10 @@ if (document.getElementById('typed')) {
     loop: true
   });
 }
+
+ window.onload = function(){
+   getLocation();
+ };
 </script>
 
 <script>
@@ -688,9 +692,9 @@ if (document.getElementsByClassName('page-header')) {
      var longitude = position.coords.longitude;
      var latlongvalue = position.coords.latitude + ","
      + position.coords.longitude;
-     var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlongvalue+"&zoom=14&size=400x300&key=AIzaSyAa8HeLH2lQMbPeOiMlM9D1VxZ7pbGQq8o";
+     var img_url = "https://maps.googleapis.com/maps/api/?center="+latlongvalue+"&zoom=14&size=2400x400&key=AIzaSyAa8HeLH2lQMbPeOiMlM9D1VxZ7pbGQq8o=&output=embed'";
      document.getElementById("mapholder").innerHTML =
-     "<img src='"+img_url+"'>";
+    '<iframe src="https://maps.google.com/maps?q='+latlongvalue+' &hl=en&z=15&amp;output=embed" width="160%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>';
   }
   function errorHandler(err) {
      if(err.code == 1) {
