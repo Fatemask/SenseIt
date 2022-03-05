@@ -13,6 +13,7 @@ urlpatterns = [
     # The help page
     path('help/', views.help, name = 'help'),
     path('about-depression/', views.about_depression, name='about_depression'),
+    path('assessment/analyze', views.analyze, name='analyze'),
     path('assessment/', views.assessment, name='assessment'),
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
