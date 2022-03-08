@@ -56,9 +56,14 @@
                             </div>
                         </div>
                         <div class="card-body p-5">
-                            <form role="form" id="message-form" method="post" autocomplete="off">
+                            <form role="form" id="message-form" action="analyze" method="post" autocomplete="off">
+                              {% csrf_token %}
                                 <div class="input-group input-group-outline mb-4">
-                                    <textarea name="message" class="form-control" id="message" rows="4" placeholder="Enter the message" spellcheck="false"></textarea>
+                                    <textarea name="message" class="form-control justify-content-start" id="message" rows="4" spellcheck="false">
+                                      {% if message %}
+                                      {{message}}
+                                      {% endif %}
+                                    </textarea>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-center">
@@ -66,9 +71,11 @@
                                     </div>
                                 </div>
                                 <div class="row justify-space-between">
-                                    <div class="col-lg-4 mx-auto">
+                                    <div class="col-lg-5 mx-auto">
                                         <div class="input-group input-group-outline">
-                                            <input type="text" class="form-control text-center my-2" placeholder="Result" disabled hidden>
+                                          {% if message %}
+                                            <input type="text" class="form-control text-center my-2" disabled value="Non-Depressive: {{nondep}}%  Depressive: {{dep}}%">
+                                          {% endif %}
                                         </div>
                                     </div>
                                 </div>
