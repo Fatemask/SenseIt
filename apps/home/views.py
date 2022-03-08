@@ -10,6 +10,8 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
 
+from .forms import QuestionnaireForm
+
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
@@ -26,7 +28,10 @@ def about_depression(request):
     return HttpResponse(html_template.render(context, request))
 
 def assessment(request):
-    context = {'segment': 'index'}
+    form = QuestionnaireForm()
+    context = {
+        'form': form 
+    }
 
     html_template = loader.get_template('home/assessment.html')
     return HttpResponse(html_template.render(context, request))
@@ -55,7 +60,14 @@ def analyze(request):
         return render(request, 'home/assessment.html', dict)
     else:
         return render(request, 'home/assessment.html')
-    
+
+def questionnaire(request):
+    if request.method == 'POST':
+        form = QuestionnaireForm(request.POST)
+    else:
+        form = QuestionnaireForm()
+
+    return render(request, 'home/assessment.html', {'form':form})  
 
 def help(request):
     context = {'segment': 'help'}
