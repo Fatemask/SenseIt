@@ -1,14 +1,16 @@
 {% block content %}
 
     <section class="py-4 position-relative">
-        <div id="carousel-testimonial-pricing" class="carousel slide carousel-team" data-bs-interval="false">
+        <div id="carousel-questionnaire" class="carousel slide carousel-team" data-bs-interval="false" data-bs-wrap="false">
           <div class="carousel-inner">
+            <form role="form" id="questionnaire-form" action="" method="post" autocomplete="off">
+              {% csrf_token %}
             <div class="carousel-item active">
               <div class="container">
                 <div class="row text-center">
                     <div class="col-6 mx-auto">
-                    <p class="text-sm font-weight-bold mb-1"> Category </p>
-                    <h4 class="text-dark">Question Excelent payment service.</h4>
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark"> Feeling sad or down in the dumps </h4>
                     <p class="my-4">
                       {{form.field1}}
                     </p>
@@ -20,47 +22,448 @@
               <div class="container">
                 <div class="row text-center">
                   <div class="col-6 mx-auto">
-                    <p class="text-sm font-weight-bold mb-1">- Customer Story</p>
-                    <h3 class="text-dark">Awesome services! Fast and secure.</h3>
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Feeling unhappy or blue</h4>
                     <p class="my-4">
-                      <i>"Wealth creation is an evolutionarily recent positive-sum game.
-                        Status is an old zero-sum game. Those attacking wealth creation
-                        are often just seeking status."</i>
+                      {{form.field2}}
                     </p>
-                    <div class="author align-items-center">
-                      <div class="avatar rounded-circle shadow bg-gradient-dark">
-                        <img src="https://appsrv1-147a1.kxcdn.com/material-kit-pro-v300/img//logos/white-logos/logo-google-white.svg" alt="logo">
-                      </div>
-                      <div class="name ps-2">
-                        <span>Ivana Goerge</span>
-                        <div>
-                          <small>CFO - Google</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-25 ms-auto opacity-2 mt-n8">
-                      <svg width="110px" height="110px" viewBox="0 0 270 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>quote-down</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                              <path d="M107.000381,49.033238 C111.792099,48.01429 115.761022,48.6892564 116.625294,50.9407629 C117.72393,53.8028077 113.174473,58.3219079 107.017635,60.982801 C107.011653,60.9853863 107.00567,60.9879683 106.999688,60.990547 C106.939902,61.0219589 106.879913,61.0439426 106.820031,61.0659514 C106.355389,61.2618887 105.888177,61.4371549 105.421944,61.5929594 C88.3985192,68.1467602 80.3242628,76.9161885 70.3525495,90.6906738 C60.0774843,104.884196 54.9399518,119.643717 54.9399518,134.969238 C54.9399518,138.278158 55.4624127,140.716309 56.5073346,142.283691 C57.2039492,143.328613 57.9876406,143.851074 58.8584088,143.851074 C59.7291771,143.851074 61.0353294,143.241536 62.7768659,142.022461 C68.3497825,138.016927 75.4030052,136.01416 83.9365338,136.01416 C93.8632916,136.01416 102.658051,140.063232 110.320811,148.161377 C117.983572,156.259521 121.814952,165.88151 121.814952,177.027344 C121.814952,188.695638 117.417572,198.970703 108.622813,207.852539 C99.828054,216.734375 89.1611432,221.175293 76.6220807,221.175293 C61.9931745,221.175293 49.3670351,215.166992 38.7436627,203.150391 C28.1202903,191.133789 22.8086041,175.024577 22.8086041,154.822754 C22.8086041,131.312012 30.0359804,110.239421 44.490733,91.6049805 C58.2196377,73.906272 74.3541002,59.8074126 102.443135,50.4450748 C102.615406,50.3748509 102.790055,50.3058192 102.966282,50.2381719 C104.199241,49.7648833 105.420135,49.3936487 106.596148,49.1227802 L107,49 Z M233.000381,49.033238 C237.792099,48.01429 241.761022,48.6892564 242.625294,50.9407629 C243.72393,53.8028077 239.174473,58.3219079 233.017635,60.982801 C233.011653,60.9853863 233.00567,60.9879683 232.999688,60.990547 C232.939902,61.0219589 232.879913,61.0439426 232.820031,61.0659514 C232.355389,61.2618887 231.888177,61.4371549 231.421944,61.5929594 C214.398519,68.1467602 206.324263,76.9161885 196.352549,90.6906738 C186.077484,104.884196 180.939952,119.643717 180.939952,134.969238 C180.939952,138.278158 181.462413,140.716309 182.507335,142.283691 C183.203949,143.328613 183.987641,143.851074 184.858409,143.851074 C185.729177,143.851074 187.035329,143.241536 188.776866,142.022461 C194.349783,138.016927 201.403005,136.01416 209.936534,136.01416 C219.863292,136.01416 228.658051,140.063232 236.320811,148.161377 C243.983572,156.259521 247.814952,165.88151 247.814952,177.027344 C247.814952,188.695638 243.417572,198.970703 234.622813,207.852539 C225.828054,216.734375 215.161143,221.175293 202.622081,221.175293 C187.993174,221.175293 175.367035,215.166992 164.743663,203.150391 C154.12029,191.133789 148.808604,175.024577 148.808604,154.822754 C148.808604,131.312012 156.03598,110.239421 170.490733,91.6049805 C184.219638,73.906272 200.3541,59.8074126 228.443135,50.4450748 C228.615406,50.3748509 228.790055,50.3058192 228.966282,50.2381719 C230.199241,49.7648833 231.420135,49.3936487 232.596148,49.1227802 L233,49 Z" fill="#48484A" fill-rule="nonzero" transform="translate(135.311778, 134.872794) scale(-1, -1) translate(-135.311778, -134.872794) "></path>
-                          </g>
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Crying spells or tearfulness</h4>
+                    <p class="my-4">
+                      {{form.field3}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Feeling discouraged</h4>
+                    <p class="my-4">
+                      {{form.field4}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Feeling hopeless</h4>
+                    <p class="my-4">
+                      {{form.field5}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Low self-esteem</h4>
+                    <p class="my-4">
+                      {{form.field6}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Feeling worthless or inadequate</h4>
+                    <p class="my-4">
+                      {{form.field7}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Guilt or shame</h4>
+                    <p class="my-4">
+                      {{form.field8}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Criticizing yourself or blaming yourself</h4>
+                    <p class="my-4">
+                      {{form.field9}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Thoughts and Feelings </p>
+                    <h4 class="text-dark">Difficulty making decisions</h4>
+                    <p class="my-4">
+                      {{form.field10}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Loss of interest in family, friends, or colleagues</h4>
+                    <p class="my-4">
+                      {{form.field11}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Loneliness</h4>
+                    <p class="my-4">
+                      {{form.field12}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Spending less time with family or friends</h4>
+                    <p class="my-4">
+                      {{form.field13}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Loss of motivation</h4>
+                    <p class="my-4">
+                      {{form.field14}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Loss of interest in work or other activities</h4>
+                    <p class="my-4">
+                      {{form.field15}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Avoiding work or other activities</h4>
+                    <p class="my-4">
+                      {{form.field16}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Activities and Personal Relationships </p>
+                    <h4 class="text-dark">Loss of pleasure or satisfaction in life</h4>
+                    <p class="my-4">
+                      {{form.field17}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Physical Symptoms </p>
+                    <h4 class="text-dark">Feeling tired</h4>
+                    <p class="my-4">
+                      {{form.field18}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Physical Symptoms </p>
+                    <h4 class="text-dark">Difficulty sleeping or sleeping too much</h4>
+                    <p class="my-4">
+                      {{form.field19}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Physical Symptoms </p>
+                    <h4 class="text-dark">Decreased or increased appetite</h4>
+                    <p class="my-4">
+                      {{form.field20}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Physical Symptoms </p>
+                    <h4 class="text-dark">Loss of interest in sex</h4>
+                    <p class="my-4">
+                      {{form.field21}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Physical Symptoms </p>
+                    <h4 class="text-dark">Worrying about your health</h4>
+                    <p class="my-4">
+                      {{form.field22}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Suicidal Urges </p>
+                    <h4 class="text-dark">Do you have any suicidal thoughts?</h4>
+                    <p class="my-4">
+                      {{form.field23}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Suicidal Urges </p>
+                    <h4 class="text-dark">Do you want to end your life?</h4>
+                    <p class="my-4">
+                      {{form.field24}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-6 mx-auto">
+                    <p class="text-sm font-weight-bold mb-1"> Suicidal Urges </p>
+                    <h4 class="text-dark">Do you have a plan for harming yourself?</h4>
+                    <p class="my-4">
+                      {{form.field25}}
+                    </p>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-12 text-center">
+                      <button type="submit" class="btn bg-gradient-dark">Calculate</button>
+                  </div>                  
+                </div>
+
+              </div>
+            </div>
+
+            <a class="carousel-control-prev text-dark text-lg" href="#carousel-questionnaire" role="button" data-bs-slide="prev">
+              <i class="fas fa-chevron-left"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-dark text-lg" href="#carousel-questionnaire" role="button" data-bs-slide="next">
+              <i class="fas fa-chevron-right"></i>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </form>
           </div>
-          <a class="carousel-control-prev text-dark text-lg" href="#carousel-testimonial-pricing" role="button" data-bs-slide="prev">
-            <i class="fas fa-chevron-left"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next text-dark text-lg" href="#carousel-testimonial-pricing" role="button" data-bs-slide="next">
-            <i class="fas fa-chevron-right"></i>
-            <span class="sr-only">Next</span>
-          </a>
+          
         </div>
       </section>
 
 
 {% endblock content %}
+
+{% block javascripts %}
+<script>
+
+  var checkitem = function() {
+  var $this;
+  $this = $("carousel-questionnaire");
+  if ($("#carousel-questionnaire .carousel-inner .item:first").hasClass("active")) {
+    $this.children(".carousel-control-prev").hide();
+    $this.children(".carousel-control-next").show();
+  } else if ($("#carousel-questionnaire .carousel-inner .item:last").hasClass("active")) {
+    $this.children(".carousel-control-next").hide();
+    $this.children(".carousel-control-prev").show();
+  } else {
+    $this.children(".carousel-control").show();
+  }
+};
+
+checkitem();
+
+$("#carousel-questionnaire").on("slid.bs.carousel", "", checkitem);
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" 
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+  crossorigin="anonymous"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!--script type="text/javascript">
+$(document).on('submit','#questionnaire-form',function(e){
+e.preventDefault();
+var form = $(this).closest("questionnaire-form");
+$.ajax({
+  type:'POST',
+  url:'{% url "assessment" %}',
+  data:
+  {
+      task:$("#questionnaire-form").val(),
+      csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+  },
+  success:function(){
+        alert('Saved');
+          }
+  })
+});
+</!--script-->
+
+<script type="text/javascript">
+  var frm = $('#questionnaire-form');
+  frm.submit(function () {
+    event.preventDefault();
+      $.ajax({
+          type: 'POST',
+          url: '{% url "assessment" %}',
+          data: frm.serialize(),
+          success: function (data) {
+              $("#result").html(data);
+              //console.log("OK");
+              //console.log(sum);
+              //alert("Success" + data);
+              Swal.fire({
+                title: 'Your score: ' + data,
+                //'You clicked the button!',
+                
+                icon: 'success',
+                html: `<table id="table" border=1>
+        <thead>
+            <tr>
+                <th>Total Score</th>
+                <th>Degree of Depression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0 - 4</td>
+                <td>Minimal or no depression</td>          
+            </tr>
+            <tr>
+                <td>5 – 10</td>
+                <td>Borderline depression</td>               
+            </tr>
+            <tr>
+                <td>11 – 20</td>
+                <td>Mild depression</td>                
+            </tr>
+            <tr>
+                <td>21 – 30</td>
+                <td>Moderate depression</td>                
+            </tr>
+            <tr>
+                <td>31 - 45</td>
+                <td>Severe depression</td>                
+            </tr>
+</tbody>
+</table>`
+                
+              })
+          },
+          error: function(data) {
+              $("#result").html("Something went wrong!");
+              //console.log("error");
+          }
+      });
+      return false;
+  });
+</script>
+
+{% endblock javascripts %}
