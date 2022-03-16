@@ -3,15 +3,21 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from urllib import response
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from .forms import QuestionnaireForm
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
 def index(request):
     context = {'segment': 'index'}
@@ -26,36 +32,46 @@ def about_depression(request):
     return HttpResponse(html_template.render(context, request))
 
 def assessment(request):
-    context = {'segment': 'index'}
-
-    html_template = loader.get_template('home/assessment.html')
-    return HttpResponse(html_template.render(context, request))
-
-def analyze(request):
+    form = QuestionnaireForm()
     if request.method == 'POST':
-        message = request.POST["message"]
-        message = message.strip()
+        if request.POST.get("message",False):
+            message = request.POST.get("message", False)
+            message = message.strip()
 
-        tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
-        model = AutoModelForSequenceClassification.from_pretrained("ShreyaR/finetuned-roberta-depression")
-        inputs = tokenizer(message, padding=True, truncation=True, return_tensors="pt")
-        labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
-        outputs = model(**inputs, labels=labels)
-        logits = outputs.logits
-        results = torch.softmax(logits, dim=1).tolist()[0]
+            tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
+            model = AutoModelForSequenceClassification.from_pretrained("ShreyaR/finetuned-roberta-depression")
+            inputs = tokenizer(message, padding=True, truncation=True, return_tensors="pt")
+            labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
+            outputs = model(**inputs, labels=labels)
+            logits = outputs.logits
+            results = torch.softmax(logits, dim=1).tolist()[0]
 
-        nondep = int(round(results[0]*100))
-        dep = int(round(results[1]*100))
+            nondep = int(round(results[0]*100))
+            dep = int(round(results[1]*100))
+            
+            context = {
+                'message': message,
+                'nondep': nondep,
+                'dep' : dep,
+                'form': form
+            }
+            return render(request, 'home/assessment.html', context)
+        if is_ajax(request=request) and request.method == "POST":
+            f = QuestionnaireForm("request.POST")
+            x = range(1, 16)
+            sum = 0
+            for n in x:
+                sum += int(request.POST["field" + str(n)])
         
-        dict = {
-            'message': message,
-            'nondep': nondep,
-            'dep' : dep
-        }
-        return render(request, 'home/assessment.html', dict)
+            msg = str(sum) 
+            #print(msg)       
+            return HttpResponse(msg)
     else:
-        return render(request, 'home/assessment.html')
-    
+        context = {
+                'form': form
+            }
+        #html_template = loader.get_template('home/assessment.html')
+        return render(request, 'home/assessment.html', context)
 
 def help(request):
     context = {'segment': 'help'}
