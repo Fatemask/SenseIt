@@ -10,7 +10,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import redirect, render
-from django.core import serializers
 
 from .forms import QuestionnaireForm
 
@@ -35,8 +34,8 @@ def about_depression(request):
 def assessment(request):
     form = QuestionnaireForm()
     if request.method == 'POST':
-        if request.POST.get("task",False):
-            message = request.POST.get("task", False)
+        if request.POST.get("message",False):
+            message = request.POST.get("message", False)
             message = message.strip()
 
             tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
@@ -56,29 +55,16 @@ def assessment(request):
                 'dep' : dep,
                 'form': form
             }
-            #return redirect('home/assessment.html', context)
             return render(request, 'home/assessment.html', context)
-        #if QuestionnaireForm("request.POST"):
         if is_ajax(request=request) and request.method == "POST":
             f = QuestionnaireForm("request.POST")
-            #field25 = request.POST["field25"]
-            #print(field25)
-            #instance = form.save()
-            #ser_instance = serializers.serialize('json', [ instance, ])
-            x = range(1, 26)
+            x = range(1, 16)
             sum = 0
             for n in x:
                 sum += int(request.POST["field" + str(n)])
-            
-            #if f.is_valid():
-            #context = {
-            #    'form': form,
-            #    'sum': sum
-            #}
-            #return render(request, 'home/assessment.html', context)
-
+        
             msg = str(sum) 
-            print(msg)       
+            #print(msg)       
             return HttpResponse(msg)
     else:
         context = {

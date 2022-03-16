@@ -5,7 +5,6 @@ choices = [
     ('1', 'Somewhat'),
     ('2', 'Moderately'),
     ('3', 'A lot'),
-    ('4', 'Extremely')
 ]
 
 class QuestionnaireForm(forms.Form):
@@ -26,15 +25,3 @@ class QuestionnaireForm(forms.Form):
     field13 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
     field14 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
     field15 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-
-    field16 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field17 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field18 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field19 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field20 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-
-    field21 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field22 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field23 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field24 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
-    field25 = forms.ChoiceField(widget=forms.RadioSelect, choices = choices)
