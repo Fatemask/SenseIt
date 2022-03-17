@@ -22,7 +22,7 @@ def is_ajax(request):
 def index(request):
     context = {'segment': 'index'}
 
-    html_template = loader.get_template('home/home.html')
+    html_template = loader.get_template('home/senseit.html')
     return HttpResponse(html_template.render(context, request))
 
 
@@ -30,6 +30,12 @@ def senseit(request):
     context = {'segment': 'index'}
 
     html_template = loader.get_template('home/senseit.html')
+    return HttpResponse(html_template.render(context, request))
+
+def about(request):
+    context = {'segment': 'index'}
+
+    html_template = loader.get_template('home/about-us.html')
     return HttpResponse(html_template.render(context, request))
 
 def about_depression(request):
