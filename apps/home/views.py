@@ -11,10 +11,17 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import redirect, render
 
+import json
+import requests
+
 from .forms import QuestionnaireForm
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+
+API_TOKEN = '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'
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
+API_URL = "https://api-inference.huggingface.co/models/ShreyaR/finetuned-roberta-depression"
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -31,6 +38,11 @@ def about_depression(request):
     html_template = loader.get_template('home/about-depression.html')
     return HttpResponse(html_template.render(context, request))
 
+def query(payload):
+    data = json.dumps(payload)
+    response = requests.request("POST", API_URL, headers=headers, data=data)
+    return json.loads(response.content.decode("utf-8"))
+
 def assessment(request):
     form = QuestionnaireForm()
     if request.method == 'POST':
@@ -38,21 +50,28 @@ def assessment(request):
             message = request.POST.get("message", False)
             message = message.strip()
 
-            tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
-            model = AutoModelForSequenceClassification.from_pretrained("ShreyaR/finetuned-roberta-depression")
-            inputs = tokenizer(message, padding=True, truncation=True, return_tensors="pt")
-            labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
-            outputs = model(**inputs, labels=labels)
-            logits = outputs.logits
-            results = torch.softmax(logits, dim=1).tolist()[0]
+            #tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
+            #model = AutoModelForSequenceClassification.from_pretrained("ShreyaR/finetuned-roberta-depression")
+            #inputs = tokenizer(message, padding=True, truncation=True, return_tensors="pt")
+            #labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
+            #outputs = model(**inputs, labels=labels)
+            #logits = outputs.logits
+            #results = torch.softmax(logits, dim=1).tolist()[0]
 
-            nondep = int(round(results[0]*100))
-            dep = int(round(results[1]*100))
-            
+            #nondep = int(round(results[0]*100))
+            #dep = int(round(results[1]*100))
+
+            data = query({"inputs": message}) 
+            res1 = data[0][0]['score']*100         
+            res2 = data[0][1]['score']*100
+            nondep = "{:.2f}".format(res1)
+            dep = "{:.2f}".format(res2)
+            #dep = data.
             context = {
                 'message': message,
                 'nondep': nondep,
                 'dep' : dep,
+                #'res' : res,
                 'form': form
             }
             return render(request, 'home/assessment.html', context)

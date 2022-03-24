@@ -9,7 +9,7 @@
 
   <!-- -------- START HEADER 8 w/ two background colors ------- -->
 <header class="header-rounded-images">
-    <div class="page-header min-vh-90">
+    <div class="page-header min-vh-90 bg-gradient-dark">
       <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" src="https://images.unsplash.com/photo-1620389701597-28188918b071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="image" loading="lazy">
       <div class="container">
         <div class="row">
@@ -71,10 +71,17 @@
                                     </div>
                                 </div>
                                 <div class="row justify-space-between">
-                                    <div class="col-lg-5 mx-auto">
+                                    <div class="col mx-auto">
                                         <div class="input-group input-group-outline">
                                           {% if message %}
-                                            <input type="text" class="form-control text-center my-2" disabled value="Non-Depressive: {{nondep}}%  Depressive: {{dep}}%">
+                                            <input type="text" class="form-control text-center my-2" disabled value="Non-Depressive: {{nondep}}% ">
+                                            <input type="text" class="form-control text-center my-2" disabled value="Depressive: {{dep}}% ">                                    
+                                          {% endif %}
+                                        </div>
+                                        <div class="mb-2 mt-5">
+                                          {% if message %}
+                                          <span class="badge bg-gradient-warning my-auto mb-2"> Disclaimer</span>
+                                          <label> This application is still early in development and should by no means be considered a clinical diagnosis. Do not take any predictions from our AI models seriously, as they are still in need of heavy development. If you are suffering from mental health conditions, please refer to clinically-verified therapists. </label>
                                           {% endif %}
                                         </div>
                                     </div>
