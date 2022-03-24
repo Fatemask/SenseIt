@@ -16,8 +16,6 @@ import requests
 
 from .forms import QuestionnaireForm
 
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import torch
 
 API_TOKEN = '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'
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
@@ -49,17 +47,6 @@ def assessment(request):
         if request.POST.get("message",False):
             message = request.POST.get("message", False)
             message = message.strip()
-
-            #tokenizer = AutoTokenizer.from_pretrained("ShreyaR/finetuned-roberta-depression")
-            #model = AutoModelForSequenceClassification.from_pretrained("ShreyaR/finetuned-roberta-depression")
-            #inputs = tokenizer(message, padding=True, truncation=True, return_tensors="pt")
-            #labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
-            #outputs = model(**inputs, labels=labels)
-            #logits = outputs.logits
-            #results = torch.softmax(logits, dim=1).tolist()[0]
-
-            #nondep = int(round(results[0]*100))
-            #dep = int(round(results[1]*100))
 
             data = query({"inputs": message}) 
             res1 = data[0][0]['score']*100         
