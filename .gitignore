@@ -1,6 +1,7 @@
 # byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 
 # tests and coverage
 *.pytest_cache
