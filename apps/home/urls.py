@@ -14,8 +14,7 @@ urlpatterns = [
     path('help/', views.help, name = 'help'),
     path('about-depression/', views.about_depression, name='about_depression'),
     path('assessment/', views.assessment, name='assessment'),
-    path('senseit/', views.senseit, name='senseit'),
-    path('about-us/', views.about, name='about_us'),
+    #path('senseit/', views.senseit, name='senseit'),
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 
